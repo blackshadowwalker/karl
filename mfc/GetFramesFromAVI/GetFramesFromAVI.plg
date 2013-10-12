@@ -1,0 +1,41 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: GetFramesFromAVI - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\Users\TELEFR~1\AppData\Local\Temp\RSP4C6A.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Release/" /Fp"Release/GetFramesFromAVI.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"E:\karl\tf_traffic\trunk\Karl\GetFramesFromAVI\GetFramesFromAVIDlg.cpp"
+]
+Creating command line "cl.exe @C:\Users\TELEFR~1\AppData\Local\Temp\RSP4C6A.tmp" 
+Creating temporary file "C:\Users\TELEFR~1\AppData\Local\Temp\RSP4C6B.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:no /pdb:"Release/GetFramesFromAVI.pdb" /machine:I386 /out:"Release/GetFramesFromAVI.exe" 
+.\Release\GetFramesFromAVI.obj
+.\Release\GetFramesFromAVIDlg.obj
+.\Release\StdAfx.obj
+.\Release\GetFramesFromAVI.res
+]
+Creating command line "link.exe @C:\Users\TELEFR~1\AppData\Local\Temp\RSP4C6B.tmp"
+<h3>Output Window</h3>
+Compiling...
+GetFramesFromAVIDlg.cpp
+E:\karl\tf_traffic\trunk\Karl\GetFramesFromAVI\GetFramesFromAVIDlg.cpp(10) : fatal error C1083: Cannot open include file: 'cv.h': No such file or directory
+执行 cl.exe 时出错.
+Creating command line "bscmake.exe /nologo /o"Release/GetFramesFromAVI.bsc"  .\Release\StdAfx.sbr .\Release\GetFramesFromAVI.sbr .\Release\GetFramesFromAVIDlg.sbr"
+Creating browse info file...
+BSCMAKE: error BK1506 : cannot open file '.\Release\GetFramesFromAVIDlg.sbr': No such file or directory
+执行 bscmake.exe 时出错.
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+GetFramesFromAVI.exe - 1 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

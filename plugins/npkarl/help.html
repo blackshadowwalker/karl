@@ -1,0 +1,46 @@
+<HTML>
+    <HEAD>
+    </HEAD>
+    <BODY>
+	
+	<div>
+		This the the plugin:<br>
+			<embed type="application/karl-plugin"  width=800 height=150 style="border:1px #f00 solid;">
+</div>	
+<div style="width:600px;float:left;border:0px #0a0 solid;">
+	<p>
+	This NPAPI application for firefox/chrome.
+	<H3>Setting:</H3>
+	<li>Chrome:<br> 
+<pre>
+Get Chrome Path(such as : D:\AppData\Local\Google\Chrome\Application\25.0.1364.84\Extensions). 
+Edit file external_extensions.json.
+Add the follow code :
+{
+  "description": "karl desp", 
+  "name": "karl extension",
+  "plugins": [
+    { "path": "E:/karl/Teleframe/src_code/Karl_code/npkarl/Debug/npkarl.dll", "public": true }
+  ]
+}
+</pre>
+	</li>
+	<li>Firefox:
+		<pre>
+Edit regedit.
+Find [HKEY_CURRENT_USER\Software\MozillaPlugins\] or [HKEY_LOCAL_MACHINE\SOFTWARE\MozillaPlugins\]
+Add subkey (named such "karl plugin")
+Add	key named "path" @ string type.
+The value of key[path] is the path of your np*.dll.
+  such as:
+	"path"="E:\\karl\\Teleframe\\src_code\\Karl_code\\npkarl\\Debug\\npkarl.dll"
+		</pre>
+	</li>
+	<li>
+		IE: Please Develop ActiveX/ocx.
+	</li>
+	</p>
+</div>
+
+    </BODY>
+</HTML>

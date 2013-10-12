@@ -1,0 +1,44 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: WindowPlay - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "I:\Users\karl\AppData\Local\Temp\RSP5847.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/WindowPlay.pdb" /debug /machine:I386 /out:"out/WindowPlay.exe" /pdbtype:sept 
+.\Debug\StdAfx.obj
+.\Debug\WindowPlay.obj
+.\Debug\WindowPlayDlg.obj
+.\Debug\wmpcdrom.obj
+.\Debug\wmpcdromcollection.obj
+.\Debug\wmpclosedcaption.obj
+.\Debug\wmpcontrols.obj
+.\Debug\wmpdvd.obj
+.\Debug\wmperror.obj
+.\Debug\wmperroritem.obj
+.\Debug\wmpmedia.obj
+.\Debug\wmpmediacollection.obj
+.\Debug\wmpnetwork.obj
+.\Debug\wmpplayer4.obj
+.\Debug\wmpplayerapplication.obj
+.\Debug\wmpplaylist.obj
+.\Debug\wmpplaylistarray.obj
+.\Debug\wmpplaylistcollection.obj
+.\Debug\wmpsettings.obj
+.\Debug\wmpstringcollection.obj
+.\Debug\WindowPlay.res
+]
+Creating command line "link.exe @I:\Users\karl\AppData\Local\Temp\RSP5847.tmp"
+<h3>Output Window</h3>
+Linking...
+
+
+
+<h3>Results</h3>
+WindowPlay.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

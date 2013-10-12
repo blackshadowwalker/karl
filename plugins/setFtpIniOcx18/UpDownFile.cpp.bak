@@ -1,0 +1,106 @@
+#include <stdafx.h>
+#include "UpDownFile.h"
+
+
+void UploadThread(void* pParam)
+{
+	FTP_THREAD_DATA  ftpData= {0};
+	memcpy(&ftpData,pParam,sizeof(FTP_THREAD_DATA));
+	int nFilePos = 0; //第几个文件的
+
+	while(1)
+	{
+		int  nFtpResult = 0;
+		char cServerFileName[256]  = {0};
+		char cLocalFile[256] = {0};
+
+		if(nFilePos < ftpData.MaxFileNum)
+		{
+			
+			sprintf(cServerFileName,"/%s/%s/%s", ftpData.serverPath,ftpData.cCameraName,ftpData.nFileList[nFilePos]);
+			sprintf(cLocalFile,"%s/%s/%s",ftpData.localPath,ftpData.cCameraName, ftpData.nFileList[nFilePos]);
+			bool exist = fopen(cLocalFile, "r")==NULL ? false : true;
+			if(exist)
+				nFtpResult = ftpputfile(ftpData.cFtpServerIp,ftpData.nFtpPort,ftpData.cFtpUser,
+					ftpData.cFtpPass,cLocalFile, cServerFileName);
+			else 
+				nFtpResult = FTP_NAME_INVALID;
+
+			if(nFtpResult == FTP_UPLOAD_SUCCESS)
+			{
+
+			}
+			else if(FTP_CONN_FAILURE== nFtpResult)
+			{
+				// ftp 网络连接失败
+				PostMessage(ftpData.hMainWnd,TF_FTP_MESSAGE,nFtpResult,nFilePos);
+				break;
+			}
+			nFilePos++; //下次循环处理下一个文件
+		}
+		else
+		{
+			nFtpResult = FTP_END;
+		}
+		Sleep(100);
+		PostMessage(ftpData.hMainWnd,TF_FTP_MESSAGE,nFtpResult,nFilePos);
+
+		if(FTP_END == nFtpResult)
+		{
+			Sleep(1000);
+			break;
+		}
+	}
+
+}
+
+void  DownThread(void *pParam)
+{
+	FTP_THREAD_DATA  ftpData= {0};
+	memcpy(&ftpData,pParam,sizeof(FTP_THREAD_DATA));
+	int nFilePos = 0; //第几个文件的
+	char cDebugBuff[64] = {0};
+	while(1)
+	{
+		int  nFtpResult = 0;
+		char cServerFileName[256]  = {0};
+		char cLocalFile[256] = {0};
+        
+		sprintf(cDebugBuff,"download filepos %d max %d  port: %d",nFilePos,ftpData.MaxFileNum, ftpData.nFtpPort);
+	//	MessageBox(0,cDebugBuff,"dowload",MB_OK);
+		if(nFilePos < ftpData.MaxFileNum)
+		{
+			sprintf(cServerFileName,"\\%s\\%s\\%s", ftpData.serverPath,ftpData.cCameraName,ftpData.nFileList[nFilePos]);
+			sprintf(cLocalFile,"%s\\%s\\%s",ftpData.localPath,ftpData.cCameraName, ftpData.nFileList[nFilePos]);
+			nFtpResult = ftpgetfile(ftpData.cFtpServerIp,ftpData.nFtpPort,ftpData.cFtpUser,
+				ftpData.cFtpPass,cServerFileName,cLocalFile);
+		//	MessageBox(0,"FTP_CONN_FAILURE","", MB_OK);
+			if(nFtpResult == FTP_UPLOAD_SUCCESS)
+			{
+
+			}
+			else if(FTP_CONN_FAILURE== nFtpResult)
+			{
+				// ftp 网络连接失败
+				PostMessage(ftpData.hMainWnd,TF_FTP_MESSAGE,nFtpResult,nFilePos);
+				
+				break;
+			}
+			nFilePos++; //下次循环处理下一个文件
+		}
+		else
+		{
+			nFtpResult = FTP_END;
+		}
+		Sleep(100);
+		PostMessage(ftpData.hMainWnd,TF_FTP_MESSAGE,nFtpResult,nFilePos);
+
+		if(FTP_END == nFtpResult)
+		{
+			Sleep(3000);
+			break;
+		}
+	}
+
+}
+

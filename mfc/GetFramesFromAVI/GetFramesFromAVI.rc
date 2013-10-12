@@ -1,0 +1,249 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (中国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\GetFramesFromAVI.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\icon4.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 196, 129
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 GetFramesFromAVI"
+FONT 9, "宋体"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,21,21
+    LTEXT           "GetFramesFromAVI 1.0 版",IDC_STATIC,38,22,119,8,
+                    SS_NOPREFIX
+    LTEXT           "版权所有 (C) 2013-01-05",IDC_STATIC,39,42,119,8
+    DEFPUSHBUTTON   "确定",IDOK,139,18,50,14,WS_GROUP
+    LTEXT           "抓取视频中的视频帧存到本地文件夹",IDC_STATIC,39,60,127,
+                    8
+    LTEXT           "Write-BY: Shadow Walker",IDC_STATIC,86,102,96,8
+    LTEXT           "QQ:1505974441",IDC_STATIC,109,89,53,8
+END
+
+IDD_GETFRAMESFROMAVI_DIALOG DIALOGEX 0, 0, 465, 426
+STYLE WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_ACCEPTFILES | WS_EX_APPWINDOW
+FONT 9, "宋体"
+BEGIN
+    PUSHBUTTON      "退出",IDCANCEL,390,22,58,14
+    PUSHBUTTON      "……",IDC_BT_BROWSER_AVI,172,20,26,14
+    PUSHBUTTON      "……",IDC_BT_BROWSWE,172,39,26,14
+    EDITTEXT        IDC_PATH,45,40,121,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "播放",IDC_BUTTON2,44,61,27,14
+    PUSHBUTTON      "STOP",IDC_BUTTON1,138,61,27,14
+    EDITTEXT        IDC_AVI_PATH,45,20,121,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "存储路径:",IDC_STATIC,4,42,37,8
+    GROUPBOX        "抓取视频中的视频帧存到本地文件夹",IDC_STATIC,1,7,205,94
+    LTEXT           "视频路径:",IDC_STATIC,4,22,37,8
+    CONTROL         "",IDC_IMAGE,"Static",SS_BLACKRECT,0,113,465,312
+    GROUPBOX        "参数配置",IDC_STATIC,209,8,249,95
+    LTEXT           "取帧间隔:",IDC_STATIC,235,82,37,8
+    EDITTEXT        IDC_FRAME_JG,277,79,33,14,ES_AUTOHSCROLL
+    LTEXT           "区域选择:",IDC_STATIC,221,23,37,8
+    EDITTEXT        IDC_RECT_X,278,23,32,14,ES_AUTOHSCROLL
+    LTEXT           "x = ",IDC_STATIC,262,26,13,8
+    LTEXT           "y = ",IDC_STATIC,262,44,15,8
+    EDITTEXT        IDC_RECT_Y,278,42,32,14,ES_AUTOHSCROLL
+    LTEXT           "Width:",IDC_STATIC,318,25,25,8
+    EDITTEXT        IDC_RECT_WIDTH,344,23,36,14,ES_AUTOHSCROLL
+    LTEXT           "Height:",IDC_STATIC,314,43,29,8
+    EDITTEXT        IDC_RECT_HEIGHT,344,42,36,14,ES_AUTOHSCROLL
+    LTEXT           "取帧:",IDC_STATIC,234,65,21,8
+    EDITTEXT        IDC_FRAME_FROM,278,62,32,14,ES_AUTOHSCROLL
+    LTEXT           "From",IDC_STATIC,259,65,17,8
+    LTEXT           "To",IDC_STATIC,330,64,9,8
+    EDITTEXT        IDC_FRAME_TO,344,61,36,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Pause",IDC_BT_PAUSE,91,61,27,14
+    PUSHBUTTON      "设定为开始帧",IDC_BUTTON4,390,60,58,14
+    PUSHBUTTON      "设定为结束帧",IDC_BUTTON5,390,79,58,14
+    PUSHBUTTON      "开始取帧",IDC_BT_START_GETFRAME,390,41,58,14
+    LTEXT           "Frame:",IDC_STATIC,2,101,25,8
+    LTEXT           "0",IDC_NFRAME,35,102,53,8
+    PUSHBUTTON      "|<<",IDC_SLOWER,43,81,27,14
+    PUSHBUTTON      ">>|",IDC_FASTER,137,81,27,14
+    PUSHBUTTON      "正常",IDC_NORMAL,90,81,27,14
+    EDITTEXT        IDC_SLEEP_TIME,320,81,20,12,ES_AUTOHSCROLL | ES_NUMBER | 
+                    NOT WS_VISIBLE
+    LTEXT           "运行时长:",IDC_STATIC,375,103,37,8
+    LTEXT           "0 S",IDC_RUN_RIMES,418,103,37,8
+    CHECKBOX        "显示",IDC_CHECK_SHOW,5,62,32,10
+    EDITTEXT        IDC_IMAGE_DEPTH,343,80,17,14,ES_AUTOHSCROLL | NOT 
+                    WS_VISIBLE
+    EDITTEXT        IDC_IMAGE_CHANNEL,365,80,14,14,ES_AUTOHSCROLL | NOT 
+                    WS_VISIBLE
+    EDITTEXT        IDC_IMAGE_WIDTH,317,96,17,14,ES_AUTOHSCROLL | NOT 
+                    WS_VISIBLE
+    EDITTEXT        IDC_IMAGE_HEIGHT,347,95,14,14,ES_AUTOHSCROLL | NOT 
+                    WS_VISIBLE
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "GetFramesFromAVI Microsoft 基础类应用程序\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "GetFramesFromAVI\0"
+            VALUE "LegalCopyright", "版权所有 (C) 2013\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "GetFramesFromAVI.EXE\0"
+            VALUE "ProductName", "GetFramesFromAVI 应用程序\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 189
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 122
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "关于 GetFramesFromAVI(&A)..."
+END
+
+#endif    // Chinese (中国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\GetFramesFromAVI.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

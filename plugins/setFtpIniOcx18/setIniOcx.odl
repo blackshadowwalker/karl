@@ -1,0 +1,77 @@
+// setIniOcx.odl : type library source for ActiveX Control project.
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (setIniOcx.tlb) that will become a resource in
+// setIniOcx.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(16551F99-27ED-433D-9E36-57CF1ED587AB), version(1.0),
+  helpfile("setIniOcx.hlp"),
+  helpstring("setIniOcx ActiveX Control module"),
+  control ]
+library SETINIOCXLib
+{
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+
+	//  Primary dispatch interface for CSetIniOcxCtrl
+
+	[ uuid(20731CB3-91F9-48B2-8785-D9F29244FEA9),
+	  helpstring("Dispatch interface for SetIniOcx Control"), hidden ]
+	dispinterface _DSetIniOcx
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CSetIniOcxCtrl)
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CSetIniOcxCtrl)
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+			[id(1), helpstring("设置FTPDlg")] void SetFtpInfoDlg(void);
+			[id(2), helpstring("下载配置文件")] VARIANT_BOOL DownLoadInfo(void);
+			[id(3), helpstring("上传配置文件")] VARIANT_BOOL UpLoadInfo(void);
+			[id(4), helpstring("车道配置")] VARIANT_BOOL SetLaneDlg(void);
+			[id(5), helpstring("操作配置")] void SetDoConfigDlg(void);
+			[id(6), helpstring("配置时间段")] void SetTimeConfigdlg(void);
+			[id(7), helpstring("设置FTP_Info")] VARIANT_BOOL SetFtpInfo(BSTR Ip, LONG Port, BSTR userName, BSTR passWord, BSTR serverPath, BSTR localPath, BSTR cameraName,LONG fileSum, BSTR fileList);
+			[id(8), helpstring("获得FTP_Info")] BSTR GetFtpInfo(void);
+	};
+
+	//  Event dispatch interface for CSetIniOcxCtrl
+
+	[ uuid(38AD2A45-F642-47AA-A648-DC5EBCC09185),
+	  helpstring("Event interface for SetIniOcx Control") ]
+	dispinterface _DSetIniOcxEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CSetIniOcxCtrl)
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CSetIniOcxCtrl
+
+	[ uuid(7C723A0A-EAC5-4163-8B09-AD6E1594F7F5), licensed,
+	  helpstring("SetIniOcx Control"), control ]
+	coclass SetIniOcx
+	{
+		[default] dispinterface _DSetIniOcx;
+		[default, source] dispinterface _DSetIniOcxEvents;
+	};
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};
